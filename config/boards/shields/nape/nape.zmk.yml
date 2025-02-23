@@ -1,0 +1,8 @@
+file_format: "1"
+id: nape
+name: Nape
+type: shield
+url: https://github.com/cordwisteria/zmk-config-nape
+requires: [seeeduino_xiao_ble]
+features:
+  - keys

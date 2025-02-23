@@ -1,0 +1,4 @@
+if NAPE
+config ZMK_KEYBOARD_NAME
+    default "Nape Trackball"
+endif
