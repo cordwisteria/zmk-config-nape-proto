@@ -1,6 +1,10 @@
+#include <dt-bindings/zmk/matrix_transform.h>
+#include <physical_layouts.dtsi>
+
 / {
     chosen {
         zmk,kscan = &default_kscan;
+        zmk,physical-layout = &physical_layout0;
     };
 
     default_kscan: kscan {
@@ -8,12 +12,35 @@
         label = "default_kscan";
 
         input-gpios =
-            <&xiao_d 10 (GPIO_PULL_UP | GPIO_ACTIVE_LOW)>,
-            <&xiao_d 9 (GPIO_PULL_UP | GPIO_ACTIVE_LOW)>,
-            <&xiao_d 8 (GPIO_PULL_UP | GPIO_ACTIVE_LOW)>,
-            <&xiao_d 1 (GPIO_PULL_UP | GPIO_ACTIVE_LOW)>,
-            <&xiao_d 2 (GPIO_PULL_UP | GPIO_ACTIVE_LOW)>,
-            <&xiao_d 3 (GPIO_PULL_UP | GPIO_ACTIVE_LOW)>
-            ;
+            <&xiao_d 10 (GPIO_PULL_UP | GPIO_ACTIVE_LOW)>,  // 表面 左キー
+            <&xiao_d 9  (GPIO_PULL_UP | GPIO_ACTIVE_LOW)>,  // 表面 中央キー
+            <&xiao_d 8  (GPIO_PULL_UP | GPIO_ACTIVE_LOW)>,  // 表面 右キー
+            <&xiao_d 1  (GPIO_PULL_UP | GPIO_ACTIVE_LOW)>,  // 裏面 上スイッチ
+            <&xiao_d 2  (GPIO_PULL_UP | GPIO_ACTIVE_LOW)>,  // 裏面 中央スイッチ
+            <&xiao_d 3  (GPIO_PULL_UP | GPIO_ACTIVE_LOW)>;  // 裏面 下スイッチ
+    };
+
+    physical_layout0: physical_layout_0 {
+        compatible = "zmk,physical-layout";
+        display-name = "Nape Physical Layout";
+        kscan = <&default_kscan>;
+        transform = <&default_transform>;
+
+        keys = 
+            <&key_physical_attrs 100 100   0    100   0 0 0>,  // 表面 左キー (1U)
+            <&key_physical_attrs 100 100 200    100   0 0 0>,  // 表面 中央キー (1U)
+            <&key_physical_attrs 100 100 300    100   0 0 0>,  // 表面 右キー (1U)
+            <&key_physical_attrs 100 100   100  0   0 0 0>,  // 裏面 上スイッチ (1U)
+            <&key_physical_attrs 100 100   100  100   0 0 0>,  // 裏面 中央スイッチ (1U)
+            <&key_physical_attrs 100 100   100  200   0 0 0>;  // 裏面 下スイッチ (1U)
+    };
+
+    default_transform: keymap_transform0 {
+        compatible = "zmk,matrix-transform";
+        rows = <1>;
+        columns = <6>;
+        map = <
+            RC(0,0) RC(0,1) RC(0,2) RC(0,3) RC(0,4) RC(0,5)
+        >;
     };
 };

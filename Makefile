@@ -8,11 +8,11 @@ TARGET = ../zmk/app/build/zephyr/zmk.uf2
 build: $(TARGET)
 
 $(TARGET): $(SRCS)
-	docker exec -w /workspaces/zmk/app -it $(container_name) west build -b seeeduino_xiao_ble -- -DSHIELD=nape -DZMK_CONFIG="/workspaces/zmk-config/config"
-#	docker exec -w /workspaces/zmk/app -it $(container_name) \
+#	docker exec -w /workspaces/zmk/app -it $(container_name) west build -b seeeduino_xiao_ble -- -DSHIELD=nape -DZMK_CONFIG="/workspaces/zmk-config/config"
+	docker exec -w /workspaces/zmk/app -it $(container_name) \
 	west build -b seeeduino_xiao_ble -S studio-rpc-usb-uart \
 	-- -DSHIELD=nape -DZMK_CONFIG="/workspaces/zmk-config/config" \
-	-DCONFIG_ZMK_STUDIO=n -DCONFIG_ZMK_STUDIO_LOCKING=n
+	-DCONFIG_ZMK_STUDIO=y -DCONFIG_ZMK_STUDIO_LOCKING=n
 
 
 
