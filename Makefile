@@ -12,7 +12,7 @@ $(TARGET): $(SRCS)
 	docker exec -w /workspaces/zmk/app -it $(container_name) \
 	west build -b seeeduino_xiao_ble -S studio-rpc-usb-uart \
 	-- -DSHIELD=nape -DZMK_CONFIG="/workspaces/zmk-config/config" \
-	-DCONFIG_ZMK_STUDIO=y -DCONFIG_ZMK_STUDIO_LOCKING=n
+	-DCONFIG_ZMK_STUDIO=y -DCONFIG_ZMK_STUDIO_LOCKING=n -DZMK_EXTRA_MODULES="/workspaces/zmk-modules/zmk-pmw3610-driver"
 
 
 
