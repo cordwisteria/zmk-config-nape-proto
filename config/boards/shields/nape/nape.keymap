@@ -112,15 +112,6 @@
             bindings = <&ul_move>, <&dr_move>;
             tap-ms = <10>;
         };
-
-        // センサー向きを変更するmod-morph
-        set_orientation: set_orientation {
-            compatible = "zmk,behavior-mod-morph";
-            label = "SET ORIENTATION";
-            #binding-cells = <1>;
-            bindings = <&set_orientation_fn 0>, <&set_orientation_fn 90>, <&set_orientation_fn 180>, <&set_orientation_fn 270>;
-            mods = <MOD_LALT>;
-        };
     };
 
     // キーマップの定義
@@ -130,7 +121,7 @@
         // デフォルトレイヤー
         default_layer {
             bindings = <
-                &mkp MB3 &mkp MB2 &mkp MB1 &mo 1 &mo 2 &set_orientation
+                &kp LC(UP) &mkp MB2 &mkp MB1 &mo 1 &mo 2 &mo 3
             >;
         };
 
