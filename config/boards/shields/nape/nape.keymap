@@ -116,23 +116,6 @@
             bindings = <&ul_move>, <&dr_move>;
             tap-ms = <10>;
         };
-
-        // センサー向きトグル
-        next_orientation: behavior_next_orientation {
-            compatible = "zmk,behavior-mod-morph";
-            label = "90_180_ORIENTATION";
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT)>;  // 追加: 必須フィールドを空の値で設定
-            bindings = <&to 1>, <&to 2>;
-        };
-
-        more_orientation: behavior_more_orientation {
-            compatible = "zmk,behavior-mod-morph";
-            label = "270_0_ORIENTATION";
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT)>;  // 追加: 必須フィールドを空の値で設定
-            bindings = <&to 3>, <&to 0>;
-        };
     };
 
     // キーマップの定義
@@ -142,28 +125,28 @@
         // デフォルトレイヤー 0°
         orientation0_layer {
             bindings = <
-                &kp N0 &mkp MB2 &mkp MB1 &mo 4 &mo 5 &mo 7
+                &kp LC(UP) &mkp MB2 &mkp MB1 &mo 4 &mo 5 &mo 7
             >;
         };
 
         // 90°回転
         orientation90_layer {
             bindings = <
-                &kp N9 &mkp MB2 &mkp MB1 &mo 4 &mo 5 &mo 7
+                &kp LC(UP) &mkp MB2 &mkp MB1 &mo 4 &mo 5 &mo 7
             >;
         };
 
         // 180°回転
         orientation180_layer {
             bindings = <
-                &kp N8 &mkp MB2 &mkp MB1 &mo 4 &mo 5 &mo 7
+                &kp LC(UP) &mkp MB2 &mkp MB1 &mo 4 &mo 5 &mo 7
             >;
         };
 
         // 270°回転
         orientation270_layer {
             bindings = <
-                &kp N7 &mkp MB2 &mkp MB1 &mo 4 &mo 5 &mo 7
+                &kp LC(UP) &mkp MB2 &mkp MB1 &mo 4 &mo 5 &mo 7
             >;
         };
 
@@ -193,7 +176,7 @@
         // モードレイヤー
         mode_layer {
             bindings = <
-                &next_orientation &more_orientation &kp LEFT_SHIFT &trans &trans &trans
+                &to 1 &to 2 &to 3 &to 0 &trans &trans
             >;
         };
     };
