@@ -1,4 +1,13 @@
 if NAPE
 config ZMK_KEYBOARD_NAME
     default "Nape Trackball"
+
+# デフォルトレイヤーの設定
+config NAPE_DEFAULT_LAYER
+    int "Default active layer on startup"
+    default 3
+    range 0 3
+    help
+      The default layer that will be active on startup.
+      Set this to the layer number you want as the default.
 endif
