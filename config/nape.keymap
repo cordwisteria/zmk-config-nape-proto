@@ -149,7 +149,7 @@
 
         orientation0_layer {
             bindings = <
-&lt 8 LC(UP_ARROW)  &mkp MB2  &mkp MB1  &mo 4  &mo 5  &mo 7
+&mo 8  &mkp MB2  &mkp MB1  &mo 4  &mo 5  &mo 7
             >;
         };
 
@@ -220,7 +220,7 @@
 &trans  &kp LG(V)  &kp LG(C)  &trans  &trans  &trans
             >;
 
-                        // トラックボールの動きをキーに変換
+            // トラックボールの動きをキーに変換
 
             sensor-bindings =
                 <&mouse_scrl UP_ARROW DOWN_ARROW>,
@@ -231,7 +231,6 @@
 
 / {
     combos {
-
         combo_layer6 {
             bindings = <&mo 6>;
             key-positions = <1 2>;
