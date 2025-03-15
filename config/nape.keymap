@@ -1,0 +1,194 @@
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/mouse.h>
+#include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/keys.h>
+// マウス移動とスクロールのデフォルト値を設定
+#define ZMK_POINTING_DEFAULT_MOVE_VAL 800
+#define ZMK_POINTING_DEFAULT_SCRL_VAL 120
+#include <dt-bindings/zmk/pointing.h>
+
+#include <input/processors.dtsi>
+#include <zephyr/dt-bindings/input/input-event-codes.h>
+
+// レイヤー番号の定義
+#define ORIENTATION_0 0
+#define ORIENTATION_90 1
+#define ORIENTATION_180 2
+#define ORIENTATION_270 3
+#define BTSEL 4
+#define BTCLR 5
+#define SCROLL 6
+#define MODE 7
+
+// マウス移動の設定
+&mmv {
+    delay-ms = <0>;              // 遅延なし
+    trigger-period-ms = <10>;    // 10ミリ秒ごとにトリガー
+    time-to-max-speed-ms = <0>;  // 即座に最大速度に
+    acceleration-exponent = <1>;  // 線形加速
+};
+
+// マウススクロールの設定
+&msc {
+    delay-ms = <0>;              // 遅延なし
+    trigger-period-ms = <10>;    // 10ミリ秒ごとにトリガー
+    time-to-max-speed-ms = <0>;  // 即座に最大速度に
+    acceleration-exponent = <0>;  // 加速なし
+};
+
+// 入力プロセッサーの設定
+/ {
+    input_processors {
+        // 垂直スクロールのスケーラー
+        zip_wheel_scaler: zip_wheel_scaler {
+            compatible = "zmk,input-processor-scaler";
+            #input-processor-cells = <2>;
+            type = <INPUT_EV_REL>;
+            codes = <INPUT_REL_WHEEL>;
+            track-remainders;
+        };
+        // 水平スクロールのスケーラー
+        zip_hwheel_scaler: zip_hwheel_scaler {
+            compatible = "zmk,input-processor-scaler";
+            #input-processor-cells = <2>;
+            type = <INPUT_EV_REL>;
+            codes = <INPUT_REL_HWHEEL>;
+            track-remainders;
+        };
+    };
+};
+
+// カスタムビヘイビアの定義
+/ {
+    behaviors {
+        // キー入力の回転検出
+        rot_kp: sensor_rotate_kp {
+            compatible = "zmk,behavior-sensor-rotate-var";
+            #sensor-binding-cells = <2>;
+            bindings = <&kp>, <&kp>;
+        };
+
+        // マウスクリックの回転検出
+        mouse_click: mouse_button_kp {
+            compatible = "zmk,behavior-sensor-rotate-var";
+            #sensor-binding-cells = <2>;
+            bindings = <&mkp>, <&mkp>;
+        };
+
+        // マウスカーソル移動の回転検出
+        mouse_mv: mouse_cursor_move {
+            compatible = "zmk,behavior-sensor-rotate-var";
+            #sensor-binding-cells = <2>;
+            bindings = <&mmv>, <&mmv>;
+            tap-ms = <10>;
+        };
+
+        // マウスホイールスクロールの回転検出
+        mouse_scrl: mouse_wheel_scrl {
+            compatible = "zmk,behavior-sensor-rotate-var";
+            #sensor-binding-cells = <2>;
+            bindings = <&msc>, <&msc>;
+            tap-ms = <10>;
+        };
+
+        // Altキーを押しながら左上に移動
+        ul_move: move_up_left {
+            compatible = "zmk,behavior-mod-morph";
+            label = "MOVE UP LEFT";
+            #binding-cells = <0>;
+            bindings = <&mmv MOVE_UP>, <&mmv MOVE_LEFT>;
+            mods = <MOD_LALT>;
+        };
+
+        // Altキーを押しながら右下に移動
+        dr_move: move_down_right {
+            compatible = "zmk,behavior-mod-morph";
+            label = "MOVE DOWN RIGHT";
+            #binding-cells = <0>;
+            bindings = <&mmv MOVE_DOWN>, <&mmv MOVE_RIGHT>;
+            mods = <MOD_LALT>;
+        };
+
+        // 左上と右下の移動を回転検出
+        uldr_move: move_up_left_down_right {
+            compatible = "zmk,behavior-sensor-rotate";
+            #sensor-binding-cells = <0>;
+            bindings = <&ul_move>, <&dr_move>;
+            tap-ms = <10>;
+        };
+    };
+
+    // キーマップの定義
+    keymap {
+        compatible = "zmk,keymap";
+
+        // デフォルトレイヤー 0°
+        orientation0_layer {
+            bindings = <
+                &kp LC(UP) &mkp MB2 &mkp MB1 &mo 4 &mo 5 &mo 7
+            >;
+        };
+
+        // 90°回転
+        orientation90_layer {
+            bindings = <
+                &kp LC(UP) &mkp MB2 &mkp MB1 &mo 4 &mo 5 &mo 7
+            >;
+        };
+
+        // 180°回転
+        orientation180_layer {
+            bindings = <
+                &kp LC(UP) &mkp MB2 &mkp MB1 &mo 4 &mo 5 &mo 7
+            >;
+        };
+
+        // 270°回転
+        orientation270_layer {
+            bindings = <
+                &kp LC(UP) &mkp MB2 &mkp MB1 &mo 4 &mo 5 &mo 7
+            >;
+        };
+
+        // Bluetooth選択レイヤー
+        btsel_layer {
+            bindings = <
+                &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &trans &bt BT_SEL 3 &bt BT_SEL 4
+            >;
+        };
+
+        // Bluetoothクリアレイヤー
+        btclr_layer {
+            bindings = <
+                &none &none &none &bt BT_CLR &none &bt BT_CLR_ALL
+            >;
+        };
+
+        // スクロールレイヤー
+        scroll_layer {
+            bindings = <
+                &kp F11 &trans &trans &trans &trans &trans
+            >;
+            // トラックボールの動きをスクロールに変換
+            sensor-bindings = <&mouse_scrl SCRL_DOWN SCRL_UP>, <&mouse_scrl SCRL_UP SCRL_DOWN>;
+        };
+
+        // モードレイヤー
+        mode_layer {
+            bindings = <
+                &to 1 &to 2 &to 3 &to 0 &trans &trans
+            >;
+        };
+    };
+};
+
+/ {
+    combos {
+        compatible = "zmk,combos";
+        combo_layer6 {
+            bindings = <&mo 6>;
+            key-positions = <1 2>;
+            timeout-ms = <50>;
+        };
+    };
+};
