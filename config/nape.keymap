@@ -223,8 +223,8 @@
             // トラックボールの動きをキーに変換
 
             sensor-bindings =
-                <&mouse_scrl UP_ARROW DOWN_ARROW>,
-                <&mouse_scrl LEFT_ARROW RIGHT_ARROW>;
+                <&rot_kp UP_ARROW DOWN_ARROW>,
+                <&rot_kp LEFT_ARROW RIGHT_ARROW>;
         };
     };
 };
