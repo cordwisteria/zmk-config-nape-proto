@@ -225,6 +225,7 @@
 
 / {
     combos {
+        compatible = "zmk,combos";
         combo_layer6 {
             bindings = <&mo 6>;
             key-positions = <1 2>;
