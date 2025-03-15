@@ -149,7 +149,7 @@
 
         orientation0_layer {
             bindings = <
-&mo 8  &mkp MB2  &mkp MB1  &mo 4  &mo 5  &mo 7
+&kp LC(UP_ARROW)  &mkp MB2  &mkp MB1  &mo 4  &mo 5  &mo 7
             >;
         };
 
@@ -213,18 +213,6 @@
             bindings = <
 &to 1  &to 2  &to 3  &to 0  &trans  &trans
             >;
-        };
-
-        cursor_layer {
-            bindings = <
-&trans  &kp LG(V)  &kp LG(C)  &trans  &trans  &trans
-            >;
-
-            // トラックボールの動きをキーに変換
-
-            sensor-bindings =
-                <&rot_kp UP_ARROW DOWN_ARROW>,
-                <&rot_kp LEFT_ARROW RIGHT_ARROW>;
         };
     };
 };
