@@ -214,6 +214,12 @@
 &to 1  &to 2  &to 3  &to 0  &trans  &trans
             >;
         };
+
+        mod_layer {
+            bindings = <
+&trans  &kp LG(V)  &kp LG(C)  &trans  &trans  &trans
+            >;
+        };
     };
 };
 
