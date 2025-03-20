@@ -149,7 +149,7 @@
 
         orientation0_layer {
             bindings = <
-&mt LSHFT RC(UP_ARROW)  &mkp MB2  &mkp MB1  &mo 4  &mo 5  &mo 7
+&mt LSHIFT RC(UP_ARROW)  &mkp MB2  &mkp MB1  &mo 4  &mo 5  &mo 7
             >;
         };
 
