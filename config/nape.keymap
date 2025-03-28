@@ -12,17 +12,6 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/pointing.h>
 
-// レイヤー番号の定義
-
-#define ORIENTATION_0 0
-#define ORIENTATION_90 1
-#define ORIENTATION_180 2
-#define ORIENTATION_270 3
-#define BTSEL 4
-#define BTCLR 5
-#define SCROLL 6
-#define MODE 7
-
 // マウス移動の設定
 
 &mmv {
@@ -71,22 +60,6 @@
 
 / {
     behaviors {
-        // キー入力の回転検出
-
-        rot_kp: sensor_rotate_kp {
-            compatible = "zmk,behavior-sensor-rotate-var";
-            #sensor-binding-cells = <2>;
-            bindings = <&kp>, <&kp>;
-        };
-
-        // マウスクリックの回転検出
-
-        mouse_click: mouse_button_kp {
-            compatible = "zmk,behavior-sensor-rotate-var";
-            #sensor-binding-cells = <2>;
-            bindings = <&mkp>, <&mkp>;
-        };
-
         // マウスカーソル移動の回転検出
 
         mouse_mv: mouse_cursor_move {
@@ -107,37 +80,7 @@
             tap-ms = <10>;
         };
 
-        // Altキーを押しながら左上に移動
 
-        ul_move: move_up_left {
-            compatible = "zmk,behavior-mod-morph";
-            label = "MOVE UP LEFT";
-            #binding-cells = <0>;
-            bindings = <&mmv MOVE_UP>, <&mmv MOVE_LEFT>;
-
-            mods = <MOD_LALT>;
-        };
-
-        // Altキーを押しながら右下に移動
-
-        dr_move: move_down_right {
-            compatible = "zmk,behavior-mod-morph";
-            label = "MOVE DOWN RIGHT";
-            #binding-cells = <0>;
-            bindings = <&mmv MOVE_DOWN>, <&mmv MOVE_RIGHT>;
-
-            mods = <MOD_LALT>;
-        };
-
-        // 左上と右下の移動を回転検出
-
-        uldr_move: move_up_left_down_right {
-            compatible = "zmk,behavior-sensor-rotate";
-            #sensor-binding-cells = <0>;
-            bindings = <&ul_move>, <&dr_move>;
-
-            tap-ms = <10>;
-        };
     };
 
     // キーマップの定義
@@ -145,7 +88,7 @@
     keymap {
         compatible = "zmk,keymap";
 
-        // デフォルトレイヤー 0°
+        // 0°、USBポートが下向き
 
         orientation0_layer {
             bindings = <
@@ -153,23 +96,23 @@
             >;
         };
 
-        // 90°回転
+        // 90°回転、USBポートが左向き
 
-        orientation90_layer {
+        down_layer {
             bindings = <
 &mt LEFT_SHIFT RC(UP_ARROW)  &mkp MB2  &mkp MB1  &mo 4  &mo 5  &mo 7
             >;
         };
 
-        // 180°回転
+        // 180°回転、USBポートが上向き
 
-        orientation180_layer {
+        left_layer {
             bindings = <
 &mt LEFT_SHIFT RC(UP_ARROW)  &mkp MB2  &mkp MB1  &mo 4  &mo 5  &mo 7
             >;
         };
 
-        // 270°回転
+        // 270°回転、USBポートが右向き
 
         orientation270_layer {
             bindings = <
@@ -207,9 +150,9 @@
                 <&mouse_scrl SCRL_UP SCRL_DOWN>;
         };
 
-        // モードレイヤー
+        // 使用向き選択レイヤー
 
-        mode_layer {
+        orientation_layer {
             bindings = <
 &to 1  &to 2  &to 3  &to 0  &trans  &trans
             >;
@@ -220,7 +163,7 @@
 / {
     combos {
         compatible = "zmk,combos";
-
+        // Key1、2同時押しでスクロールレイヤーへ
         combo_layer6 {
             bindings = <&mo 6>;
             key-positions = <1 2>;

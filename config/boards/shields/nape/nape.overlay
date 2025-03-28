@@ -30,9 +30,9 @@
             <&key_physical_attrs 100 100   0    100   0 0 0>,  // 表面 左キー (1U)
             <&key_physical_attrs 100 100 200    100   0 0 0>,  // 表面 中央キー (1U)
             <&key_physical_attrs 100 100 300    100   0 0 0>,  // 表面 右キー (1U)
-            <&key_physical_attrs 100 100   100  0   0 0 0>,  // 裏面 上スイッチ (1U)
-            <&key_physical_attrs 100 100   100  100   0 0 0>,  // 裏面 中央スイッチ (1U)
-            <&key_physical_attrs 100 100   100  200   0 0 0>;  // 裏面 下スイッチ (1U)
+            <&key_physical_attrs 100 100   100  300   0 0 0>,  // 裏面 上スイッチ (1U)
+            <&key_physical_attrs 100 100   100  400   0 0 0>,  // 裏面 中央スイッチ (1U)
+            <&key_physical_attrs 100 100   100  500   0 0 0>;  // 裏面 下スイッチ (1U)
     };
 
     default_transform: keymap_transform0 {

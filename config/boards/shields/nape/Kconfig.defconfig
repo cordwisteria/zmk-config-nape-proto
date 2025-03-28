@@ -2,12 +2,15 @@ if NAPE
 config ZMK_KEYBOARD_NAME
     default "Nape Trackball"
 
-# デフォルトレイヤーの設定
+# デフォルト向きレイヤーの設定
 config NAPE_DEFAULT_LAYER
-    int "Default active layer on startup"
+    int "電源オン時のデフォルトの向きレイヤー"
     default 3
     range 0 3
     help
-      The default layer that will be active on startup.
-      Set this to the layer number you want as the default.
+      電源オン時のデフォルトの使用向きを選択。
+      0: USBポートが下 
+      1: USBポートが左 
+      2: USBポートが上 
+      3: USBポートが右
 endif
