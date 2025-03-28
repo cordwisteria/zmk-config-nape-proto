@@ -114,7 +114,7 @@
 
         // 270°回転、USBポートが右向き
 
-        orientation270_layer {
+        right_layer {
             bindings = <
 &mt LEFT_SHIFT RC(UP_ARROW)  &mkp MB2  &mkp MB1  &mo 4  &mo 5  &mo 7
             >;
