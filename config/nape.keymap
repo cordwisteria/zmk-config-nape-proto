@@ -147,7 +147,7 @@
 
         // レイヤー7（時計回り315°）
 
-        orientation270_layer {
+        orientation315_layer {
             bindings = <
 &mt LEFT_SHIFT RC(UP_ARROW)  &mkp MB2  &mkp MB1  &mo 8  &mo 9  &mo 11
             >;
