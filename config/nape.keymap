@@ -86,7 +86,7 @@
     // キーマップの定義
 
     keymap {
-        compatible = "zmk,keymap";"
+        compatible = "zmk,keymap";
 
         // レイヤー0（0°、USBポートを下向きにした状態）"
 
