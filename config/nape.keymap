@@ -184,7 +184,7 @@
 
         orientation_layer {
             bindings = <
-&to 1  &to 3  &to 5  &to 7  &trans  &trans
+&to 1  &to 3  &to 5  &to 7  &to 0  &trans
             >;
         };
     };
