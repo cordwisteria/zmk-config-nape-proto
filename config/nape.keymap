@@ -92,7 +92,7 @@
 
         orientation0_layer {
             bindings = <
-&mt LSHIFT RC(UP_ARROW)  &mkp MB2  &mkp MB1  &mo 6  &mo 7  &mo 9
+&mt LSHIFT RC(UP_ARROW)  &mkp MB2  &mkp MB1  &mo 7  &mo 8  &mo 10
             >;
         };
  
@@ -100,7 +100,7 @@
 
         orientation45_layer {
             bindings = <
-&mt LEFT_SHIFT RC(UP_ARROW)  &mkp MB2  &mkp MB1  &mo 6  &mo 7  &mo 9
+&mt LEFT_SHIFT RC(UP_ARROW)  &mkp MB2  &mkp MB1  &mo 7  &mo 8  &mo 10
             >;
         };
 
@@ -108,7 +108,7 @@
 
         orientation90_layer {
             bindings = <
-&mt LEFT_SHIFT RC(UP_ARROW)  &mkp MB2  &mkp MB1  &mo 6  &mo 7  &mo 9
+&mt LEFT_SHIFT RC(UP_ARROW)  &mkp MB2  &mkp MB1  &mo 7  &mo 8  &mo 10
             >;
         };
 
@@ -116,7 +116,7 @@
 
         orientation135_layer {
             bindings = <
-&mt LEFT_SHIFT RC(UP_ARROW)  &mkp MB2  &mkp MB1  &mo 6  &mo 7  &mo 9
+&mt LEFT_SHIFT RC(UP_ARROW)  &mkp MB2  &mkp MB1  &mo 7  &mo 8  &mo 10
             >;
         };
 
@@ -124,7 +124,7 @@
 
         orientation180_layer {
             bindings = <
-&mt LEFT_SHIFT RC(UP_ARROW)  &mkp MB2  &mkp MB1  &mo 6  &mo 7  &mo 9
+&mt LEFT_SHIFT RC(UP_ARROW)  &mkp MB2  &mkp MB1  &mo 7  &mo 8  &mo 10
             >;
         };
 
@@ -132,7 +132,7 @@
 
         orientation225_layer {
             bindings = <
-&mt LEFT_SHIFT RC(UP_ARROW)  &mkp MB2  &mkp MB1  &mo 6  &mo 7  &mo 9
+&mt LEFT_SHIFT RC(UP_ARROW)  &mkp MB2  &mkp MB1  &mo 7  &mo 8  &mo 10
             >;
         };
 
@@ -140,11 +140,11 @@
 
         orientation270_layer {
             bindings = <
-&mt LEFT_SHIFT RC(UP_ARROW)  &mkp MB2  &mkp MB1  &mo 6  &mo 7  &mo 9
+&mt LEFT_SHIFT RC(UP_ARROW)  &mkp MB2  &mkp MB1  &mo 7  &mo 8  &mo 10
             >;
         };
 
-        // レイヤー6（Bluetooth選択レイヤー）
+        // レイヤー7（Bluetooth選択レイヤー）
 
         btsel_layer {
             bindings = <
@@ -152,7 +152,7 @@
             >;
         };
 
-        // レイヤー7（Bluetoothクリアレイヤー）
+        // レイヤー8（Bluetoothクリアレイヤー）
 
         btclr_layer {
             bindings = <
@@ -160,7 +160,7 @@
             >;
         };
 
-        // レイヤー8（スクロールレイヤー）
+        // レイヤー9（スクロールレイヤー）
 
         scroll_layer {
             bindings = <
@@ -174,7 +174,7 @@
                 <&mouse_scrl SCRL_UP SCRL_DOWN>;
         };
 
-        // レイヤー9（使用向き選択レイヤー）
+        // レイヤー10（使用向き選択レイヤー）
 
         orientation_layer {
             bindings = <
