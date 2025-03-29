@@ -79,6 +79,15 @@
 
             tap-ms = <10>;
         };
+
+        lt_mkp: lt_mkp {
+            compatible = "zmk,behavior-hold-tap";
+            label = "LT_MKP";
+            bindings = <&to>, <&mkp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+        };
     };
 
     // キーマップの定義
@@ -98,7 +107,7 @@
 
         orientation45_layer {
             bindings = <
-&lt 10 RC(UP_ARROW)  &mkp MB2  &mkp MB1  &mo 8  &mo 9  &mo 11
+&lt_mkp 10 MB3  &mkp MB2  &mkp MB1  &mo 8  &mo 9  &mo 11
             >;
         };
 
@@ -114,7 +123,7 @@
 
         orientation135_layer {
             bindings = <
-&lt 10 RC(UP_ARROW)  &mkp MB2  &mkp MB1  &mo 8  &mo 9  &mo 11
+&lt_mkp 10 MB3  &mkp MB2  &mkp MB1  &mo 8  &mo 9  &mo 11
             >;
         };
 
@@ -130,7 +139,7 @@
 
         orientation225_layer {
             bindings = <
-&lt 10 RC(UP_ARROW)  &mkp MB2  &mkp MB1  &mo 8  &mo 9  &mo 11
+&lt_mkp 10 MB3  &mkp MB2  &mkp MB1  &mo 8  &mo 9  &mo 11
             >;
         };
 
@@ -146,7 +155,7 @@
 
         orientation315_layer {
             bindings = <
-&lt 10 RC(UP_ARROW)  &mkp MB2  &mkp MB1  &mo 8  &mo 9  &mo 11
+&lt_mkp 10 MB3  &mkp MB2  &mkp MB1  &mo 8  &mo 9  &mo 11
             >;
         };
 
@@ -170,7 +179,7 @@
 
         scroll_layer {
             bindings = <
-&kp F11  &trans  &trans  &trans  &trans  &trans
+&kp F11  &mkp MB4  &mkp MB5  &trans  &trans  &trans
             >;
 
             // トラックボールの動きをスクロールに変換
