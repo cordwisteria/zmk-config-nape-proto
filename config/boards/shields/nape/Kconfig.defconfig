@@ -5,12 +5,16 @@ config ZMK_KEYBOARD_NAME
 # デフォルト向きレイヤーの設定
 config NAPE_DEFAULT_LAYER
     int "電源オン時のデフォルトの向きレイヤー"
-    default 3
-    range 0 3
+    default 5
+    range 0 6
     help
       電源オン時のデフォルトの使用向きを選択。
-      0: USBポートが下 
-      1: USBポートが左 
-      2: USBポートが上 
-      3: USBポートが右
+      それぞれのレイヤーと回転角度（時計回り）の対応は以下の通り。
+      0: 0° USBポートを下にした状態 
+      1: 45°
+      2: 90° 
+      3: 135°
+      4: 180°
+      5: 225°
+      6: 270°
 endif
