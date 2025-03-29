@@ -92,59 +92,68 @@
 
         orientation0_layer {
             bindings = <
-&mt LSHIFT RC(UP_ARROW)  &mkp MB2  &mkp MB1  &mo 7  &mo 8  &mo 10
+&mt LSHIFT RC(UP_ARROW)  &mkp MB2  &mkp MB1  &mo 8  &mo 9  &mo 11
             >;
         };
  
-        // レイヤー1（時計回り45°）"
+        // レイヤー1（時計回り45°）
 
         orientation45_layer {
             bindings = <
-&mt LEFT_SHIFT RC(UP_ARROW)  &mkp MB2  &mkp MB1  &mo 7  &mo 8  &mo 10
+&mt LEFT_SHIFT RC(UP_ARROW)  &mkp MB2  &mkp MB1  &mo 8  &mo 9  &mo 11
             >;
         };
 
-        // レイヤー2（時計回り90°）"
+        // レイヤー2（時計回り90°）
 
         orientation90_layer {
             bindings = <
-&mt LEFT_SHIFT RC(UP_ARROW)  &mkp MB2  &mkp MB1  &mo 7  &mo 8  &mo 10
+&mt LEFT_SHIFT RC(UP_ARROW)  &mkp MB2  &mkp MB1  &mo 8  &mo 9  &mo 11
             >;
         };
 
-        // レイヤー3（時計回り135°）"
+        // レイヤー3（時計回り135°）
 
         orientation135_layer {
             bindings = <
-&mt LEFT_SHIFT RC(UP_ARROW)  &mkp MB2  &mkp MB1  &mo 7  &mo 8  &mo 10
+&mt LEFT_SHIFT RC(UP_ARROW)  &mkp MB2  &mkp MB1  &mo 8  &mo 9  &mo 11
             >;
         };
 
-        // レイヤー4（時計回り180°）"
+        // レイヤー4（時計回り180°）
 
         orientation180_layer {
             bindings = <
-&mt LEFT_SHIFT RC(UP_ARROW)  &mkp MB2  &mkp MB1  &mo 7  &mo 8  &mo 10
+&mt LEFT_SHIFT RC(UP_ARROW)  &mkp MB2  &mkp MB1  &mo 8  &mo 9  &mo 11
             >;
         };
 
-        // レイヤー5（時計回り225°）"
+        // レイヤー5（時計回り225°）
 
         orientation225_layer {
             bindings = <
-&mt LEFT_SHIFT RC(UP_ARROW)  &mkp MB2  &mkp MB1  &mo 7  &mo 8  &mo 10
+&mt LEFT_SHIFT RC(UP_ARROW)  &mkp MB2  &mkp MB1  &mo 8  &mo 9  &mo 11
             >;
         };
 
-        // レイヤー6（時計回り270°）"
+        // レイヤー6（時計回り270°）
 
         orientation270_layer {
             bindings = <
-&mt LEFT_SHIFT RC(UP_ARROW)  &mkp MB2  &mkp MB1  &mo 7  &mo 8  &mo 10
+&mt LEFT_SHIFT RC(UP_ARROW)  &mkp MB2  &mkp MB1  &mo 8  &mo 9  &mo 11
             >;
         };
 
-        // レイヤー7（Bluetooth選択レイヤー）
+
+        // レイヤー7（時計回り315°）
+
+        orientation270_layer {
+            bindings = <
+&mt LEFT_SHIFT RC(UP_ARROW)  &mkp MB2  &mkp MB1  &mo 8  &mo 9  &mo 11
+            >;
+        };
+
+        // レイヤー8（Bluetooth選択レイヤー）
 
         btsel_layer {
             bindings = <
@@ -152,7 +161,7 @@
             >;
         };
 
-        // レイヤー8（Bluetoothクリアレイヤー）
+        // レイヤー9（Bluetoothクリアレイヤー）
 
         btclr_layer {
             bindings = <
@@ -160,7 +169,7 @@
             >;
         };
 
-        // レイヤー9（スクロールレイヤー）
+        // レイヤー10（スクロールレイヤー）
 
         scroll_layer {
             bindings = <
@@ -174,11 +183,11 @@
                 <&mouse_scrl SCRL_UP SCRL_DOWN>;
         };
 
-        // レイヤー10（使用向き選択レイヤー）
+        // レイヤー11（使用向き選択レイヤー）
 
         orientation_layer {
             bindings = <
-&to 1  &to 3  &to 5  &to 0  &trans  &trans
+&to 1  &to 3  &to 5  &to 7  &trans  &trans
             >;
         };
     };
@@ -189,7 +198,7 @@
         compatible = "zmk,combos";
         // Key1、2同時押しでスクロールレイヤーへ
         combo_layer9 {
-            bindings = <&mo 9>;
+            bindings = <&mo 10>;
             key-positions = <1 2>;
             timeout-ms = <50>;
         };
