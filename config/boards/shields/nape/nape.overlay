@@ -81,7 +81,7 @@
     pinctrl-0 = <&spi0_default>;
     pinctrl-1 = <&spi0_sleep>;
     pinctrl-names = "default", "sleep";
-    cs-gpios = <&xiao_d 2 GPIO_ACTIVE_LOW | GPIO_PULL_UP>;
+    cs-gpios = <&xiao_d 2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
 
     trackball: trackball@0 {
         status = "okay";
