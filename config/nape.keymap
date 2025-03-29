@@ -92,7 +92,7 @@
 
         orientation0_layer {
             bindings = <
-&mt LSHIFT RC(UP_ARROW)  &mkp MB2  &mkp MB1  &mo 4  &mo 5  &mo 7
+&mt LSHIFT RC(UP_ARROW)  &mkp MB2  &mkp MB1  &mo 4  &mo 5  &mo 9
             >;
         };
  
@@ -100,7 +100,7 @@
 
         orientation45_layer {
             bindings = <
-&mt LEFT_SHIFT RC(UP_ARROW)  &mkp MB2  &mkp MB1  &mo 4  &mo 5  &mo 7
+&mt LEFT_SHIFT RC(UP_ARROW)  &mkp MB2  &mkp MB1  &mo 4  &mo 5  &mo 9
             >;
         };
 
@@ -108,7 +108,7 @@
 
         orientation90_layer {
             bindings = <
-&mt LEFT_SHIFT RC(UP_ARROW)  &mkp MB2  &mkp MB1  &mo 4  &mo 5  &mo 7
+&mt LEFT_SHIFT RC(UP_ARROW)  &mkp MB2  &mkp MB1  &mo 4  &mo 5  &mo 9
             >;
         };
 
@@ -116,7 +116,7 @@
 
         orientation135_layer {
             bindings = <
-&mt LEFT_SHIFT RC(UP_ARROW)  &mkp MB2  &mkp MB1  &mo 4  &mo 5  &mo 7
+&mt LEFT_SHIFT RC(UP_ARROW)  &mkp MB2  &mkp MB1  &mo 4  &mo 5  &mo 9
             >;
         };
 
@@ -124,7 +124,7 @@
 
         orientation180_layer {
             bindings = <
-&mt LEFT_SHIFT RC(UP_ARROW)  &mkp MB2  &mkp MB1  &mo 4  &mo 5  &mo 7
+&mt LEFT_SHIFT RC(UP_ARROW)  &mkp MB2  &mkp MB1  &mo 4  &mo 5  &mo 9
             >;
         };
 
@@ -132,7 +132,7 @@
 
         orientation225_layer {
             bindings = <
-&mt LEFT_SHIFT RC(UP_ARROW)  &mkp MB2  &mkp MB1  &mo 4  &mo 5  &mo 7
+&mt LEFT_SHIFT RC(UP_ARROW)  &mkp MB2  &mkp MB1  &mo 4  &mo 5  &mo 9
             >;
         };
 
@@ -140,7 +140,7 @@
 
         orientation270_layer {
             bindings = <
-&mt LEFT_SHIFT RC(UP_ARROW)  &mkp MB2  &mkp MB1  &mo 4  &mo 5  &mo 7
+&mt LEFT_SHIFT RC(UP_ARROW)  &mkp MB2  &mkp MB1  &mo 4  &mo 5  &mo 9
             >;
         };
 
@@ -178,7 +178,7 @@
 
         orientation_layer {
             bindings = <
-&to 1  &to 2  &to 3  &to 0  &trans  &trans
+&to 1  &to 3  &to 5  &to 0  &trans  &trans
             >;
         };
     };
