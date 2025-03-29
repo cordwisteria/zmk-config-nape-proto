@@ -79,8 +79,6 @@
 
             tap-ms = <10>;
         };
-
-
     };
 
     // キーマップの定義
@@ -95,12 +93,12 @@
 &mt LSHIFT RC(UP_ARROW)  &mkp MB2  &mkp MB1  &mo 8  &mo 9  &mo 11
             >;
         };
- 
+
         // レイヤー1（時計回り45°）
 
         orientation45_layer {
             bindings = <
-&mt LEFT_SHIFT RC(UP_ARROW)  &mkp MB2  &mkp MB1  &mo 8  &mo 9  &mo 11
+&lt 10 RC(UP_ARROW)  &mkp MB2  &mkp MB1  &mo 8  &mo 9  &mo 11
             >;
         };
 
@@ -116,7 +114,7 @@
 
         orientation135_layer {
             bindings = <
-&mt LEFT_SHIFT RC(UP_ARROW)  &mkp MB2  &mkp MB1  &mo 8  &mo 9  &mo 11
+&lt 10 RC(UP_ARROW)  &mkp MB2  &mkp MB1  &mo 8  &mo 9  &mo 11
             >;
         };
 
@@ -132,7 +130,7 @@
 
         orientation225_layer {
             bindings = <
-&mt LEFT_SHIFT RC(UP_ARROW)  &mkp MB2  &mkp MB1  &mo 8  &mo 9  &mo 11
+&lt 10 RC(UP_ARROW)  &mkp MB2  &mkp MB1  &mo 8  &mo 9  &mo 11
             >;
         };
 
@@ -144,12 +142,11 @@
             >;
         };
 
-
         // レイヤー7（時計回り315°）
 
         orientation315_layer {
             bindings = <
-&mt LEFT_SHIFT RC(UP_ARROW)  &mkp MB2  &mkp MB1  &mo 8  &mo 9  &mo 11
+&lt 10 RC(UP_ARROW)  &mkp MB2  &mkp MB1  &mo 8  &mo 9  &mo 11
             >;
         };
 
@@ -196,7 +193,9 @@
 / {
     combos {
         compatible = "zmk,combos";
+
         // Key1、2同時押しでスクロールレイヤーへ
+
         combo_layer9 {
             bindings = <&mo 10>;
             key-positions = <1 2>;
