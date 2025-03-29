@@ -88,6 +88,15 @@
             #binding-cells = <2>;
             tapping-term-ms = <200>;
         };
+
+        mod_mkp: mod_mkp {
+            compatible = "zmk,behavior-hold-tap";
+            label = "MOD_MKP";
+            bindings = <&kp>, <&mkp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+        };
     };
 
     // キーマップの定義
@@ -99,7 +108,7 @@
 
         orientation0_layer {
             bindings = <
-&mt LSHIFT RC(UP_ARROW)  &mkp MB2  &mkp MB1  &mo 8  &mo 9  &mo 11
+&lt_mkp 10 MB3  &mkp MB2  &mkp MB1  &mo 8  &mo 9  &mo 11
             >;
         };
 
@@ -115,7 +124,7 @@
 
         orientation90_layer {
             bindings = <
-&mt LEFT_SHIFT RC(UP_ARROW)  &mkp MB2  &mkp MB1  &mo 8  &mo 9  &mo 11
+&mod_mkp LEFT_SHIFT MB3  &mkp MB2  &mkp MB1  &mo 8  &mo 9  &mo 11
             >;
         };
 
@@ -131,7 +140,7 @@
 
         orientation180_layer {
             bindings = <
-&mt LEFT_SHIFT RC(UP_ARROW)  &mkp MB2  &mkp MB1  &mo 8  &mo 9  &mo 11
+&lt_mkp 10 MB3  &mkp MB2  &mkp MB1  &mo 8  &mo 9  &mo 11
             >;
         };
 
@@ -147,7 +156,7 @@
 
         orientation270_layer {
             bindings = <
-&mt LEFT_SHIFT RC(UP_ARROW)  &mkp MB2  &mkp MB1  &mo 8  &mo 9  &mo 11
+&mod_mkp LEFT_SHIFT MB3  &mkp MB2  &mkp MB1  &mo 8  &mo 9  &mo 11
             >;
         };
 
